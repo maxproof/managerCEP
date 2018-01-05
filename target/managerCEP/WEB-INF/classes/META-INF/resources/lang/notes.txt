@@ -1,0 +1,2 @@
+- remettre les utilisateurs dans la version précèdente aka userApp avec code précédent
+- utiliser systeme actuel pour lien companies <--> contact

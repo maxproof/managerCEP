@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>managerCEP</display-name>
+	<filter>
+		<filter-name>MultipartFilter</filter-name>
+		<filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>MultipartFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<session-config>
+		<session-timeout>30</session-timeout> <!-- in minutes -->
+	</session-config>
+
+	
+	<!-- No se! -->
+	<!--filter>
+    	<filter-name>SessionFilter</filter-name>
+    		<filter-class>
+        	ch.mmi.cep.filter.SessionFilter
+    	</filter-class>
+    	<init-param>
+        	<param-name>avoid-urls</param-name>
+        	<param-value>/home</param-value>
+    	</init-param>
+	</filter>
+	<filter-mapping>
+    	<filter-name>SessionFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+	</filter-mapping-->
+
+</web-app>
